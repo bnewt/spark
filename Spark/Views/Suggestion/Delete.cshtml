@@ -1,0 +1,47 @@
+﻿@model Spark.Models.Suggestion
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Suggestion</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SparkID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SparkID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ParentSuggestionID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ParentSuggestionID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UpvoteCount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UpvoteCount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Active)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Active)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

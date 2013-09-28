@@ -1,0 +1,36 @@
+﻿@model Spark.Models.Flag
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Flag</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SuggestionID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SuggestionID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Outcome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Outcome)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

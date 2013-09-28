@@ -1,0 +1,53 @@
+﻿@model Spark.Models.Flag
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@Html.ActionLink("Create New", "Create", null, new { })
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Flag</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SuggestionID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SuggestionID)
+            @Html.ValidationMessageFor(model => model.SuggestionID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Outcome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Outcome)
+            @Html.ValidationMessageFor(model => model.Outcome)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
